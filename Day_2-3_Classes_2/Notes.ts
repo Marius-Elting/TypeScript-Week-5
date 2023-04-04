@@ -57,5 +57,45 @@ class newEmployee {
 
 const john2 = new newEmployee("John", 30)
 
-console.log(john2)
+class Manager extends Employee {
+    private department: string;
+    constructor(name: string, age: number, department: string) {
+        super(name, age)
+        this.department = department
+    }
+    getName(): string {
+        return "Manager " + this.name
+    }
+}
 
+class Developer extends Employee {
+    private programmingLanguage: string;
+    constructor(name: string, age: number, programmingLanguage: string) {
+        super(name, age)
+        this.programmingLanguage = programmingLanguage
+    }
+
+    getProgrammingLanguage(): string {
+        return this.programmingLanguage
+    }
+    getName(): string {
+        return "Developer " + this.name
+    }
+}
+
+const printNames = (es: Employee[]) => {
+    es.forEach(e => console.log(e.getName()))
+    const a = es.map(e => e.getName())
+    return a
+}
+
+const employees: Employee[] = [
+    new Manager("Sophie", 25, "HR"),
+    new Manager("anna", 26, "TS")
+]
+
+
+
+printNames(employees)
+
+export { }

@@ -54,3 +54,4 @@ const bike = new Vehicle(0.5, 1, 0, "MyBike", 1, false)
 
 
 
+export { }
